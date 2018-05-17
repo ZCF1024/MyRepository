@@ -1,0 +1,114 @@
+->脚本操作：
+    1.不区分大小写，字符串使用单引号，末尾不需要加分号
+	2.按功能分类：
+	      DDL：数据定义语言，用于进行各种数据库对象的创建，主 要操作包括creat、alter(修改)、drop(删除数据库)
+		  DML：数据管理语言，用于对表的数据的添加、删除、修改、查询，主要操作包括insert、updata、delete、select。
+		  DCL：数据控制语言，用于进行权限分配
+	3.注释：单行注释--,多行注释/**/
+	->数据库：创建、删除（没有修改）
+	
+	select * from sysdatabases--在master下，查看所有数据库，但要查询某个数据库是否存在时可以用这个命令
+	
+	drop database + 数据库名    --删除数据库
+	
+	create database + 数据库名   --创建数据库
+	
+	创建并配置数据库代码：
+	create database stuDB
+    on primary
+    (
+       name='stuDB', --主数据文件名
+       filename='D:\SQLServer\stuDB_data.mdf',--数据库主文件无理名称
+       size=5mb,   --数据文件的初始大小
+       maxsize=100mb, --数据文件增长的最大值
+       filegrowth=15% --主数据文件的增长率或增长大小   
+    )
+    log on
+    (
+      name='stuDB_log',
+      filename='D:\SQLServer\stuDB_log.ldf',--日志文件
+      size=2mb,
+      filegrowth=1mb
+    )
+	
+	
+	创建表：
+	create table Class
+    (
+       classID int identity(1,1) primary key not null,
+       className nvarchar(20) not null default('一班')
+    )
+    --identity: 标识列, identity(a,b),ab均为正整数,a表示开始数,b表示增幅
+    --primary key: 主键
+    --not null: 不为空
+	--default('一班'): 设置默认值
+	create table student
+	(
+	    age int check(age between 0 and 120),
+	    foreign key (classID) references Class(classID)
+		--将classID作为外键
+	)
+	
+	修改表：
+	alter table Student add S_entrance Date  --增加入学时间项
+	alter table Student alter clumn age smallint  --将学生年龄改为smallint类型
+	alter table Student drop column S_entrance
+	
+	-->数据库表的数据操作 UserInfo(UserID,UserName,UserPwd)
+	
+	    -->简单查询
+		   select * from 表名
+		
+		-->增加数据
+		   1. 要求值的列名与值的位置对应
+		   2. 如果所有行都要插入值，可以省略列名部分
+		   3. 一次性插入多个值，可以在values后拼接多个数据，用逗号隔开如   value (),(),()
+		   例：
+	       select * from UserInfo
+           insert UserInfo(UserName,UserPwd)
+           values('小花','123')   --为所有列按照  "指定顺序"  赋值
+	
+	       select * from UserInfo
+           insert UserInfo
+           values('小草','123')   --为所有列按照  "默认顺序"  赋值
+	
+	       select * from UserInfo
+	       insert UserInfo(UserName)
+	       value ('小树')         --为某些列赋值
+		
+		-->修改数据
+		    1. update 表名 set 列名=    
+		       如(update UserIfo set UserPwd='123')设置所有用户密码为123
+		    2. updata UserIfo set UserPwd=null where UserID>3
+			   将用户ID大于3的用户密码设为空
+			   insert StudentInfo(Name,Sex,Phone,Mail,ClassID)
+               values('小黄',1,'13698065149','154155115',2),
+                     ('小白',1,'14565666863','abc265@126.com',3),
+                     ('小绿',0,'16544454454','4545415zcf@gmail.com',1),
+                     ('小青',1,'17856545446','1541551@hotmail.com',1),
+                     ('小小',1,'18485448569','12315645@gmail.com',2),
+                     ('小子',0,'19595545254','9945654@hotmail.com',3)
+                     select * from StudentInfo as Stu
+			   
+	    -->删除数据
+		    1. delete 表名 where 条件
+			   如：delete UserIfo where UserName='小花'
+			   
+        -->清空表
+            truncate table 表名
+            当表中有某列作为别的表的外键时，此操作会报错
+    
+	-->快捷键：
+             set static time on/of: 在消息栏显示执行时间
+			 Ctrl + E : 执行	
+	         Ctrl + R : 隐藏消息栏
+			 Ctrl + L : 计划任务，对SQL语句效率进行分析
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表单5-图像按钮</title> 
+</head>
+<body>	 
+		 <form>
+		      <input type="image" src="E:\图片素材\download.jpg">
+		 </form> <!--点击图片时，能获取点击坐标-->
+		 <image src="E:\图片素材\download.jpg" usemap="map1">
+		 <map name="map1">
+		      <area href="http://www.zut.edu.cn/" shape="circle" coords="135px,135px,135px" target="_blank">
+			  <!--  coordsd中的是圆的圆心坐标和圆的半径   -->
+			  
+			  <area href="https://github.com/" shape="Rect" coords="302,60,363,125" target="_blank" >
+			  <!--  coordsd中的是矩形左上角和右上角的坐标   -->
+			  
+			  <area href="https://www.kankanwu.com/" shape="Poly" coords="434,151,523,163,471,228" target="_blank" >
+			  <!--  coordsd中的是多边形(Poly)各顶点的坐标   -->
+			  
+			  <area shape="Default">
+			  <!--代表默认区域，即覆盖整张图，不需要coords值-->
+		 </map>
+</body>
+</html>

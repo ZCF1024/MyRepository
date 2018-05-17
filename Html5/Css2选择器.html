@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+        <!--
+		    1. 选择所有元素
+		      * {
+		          font-size: 40px;
+		          color: red;
+                }
+		    2. 根据类选择元素
+              a {
+		          font-size: 40px;
+		          color: red;
+				}
+				大括号前可以是 a, p....等元素
+			3. 根据类选择元素
+	    .class1 {
+		          font-size: 40px;
+		          color: blue;
+                }
+		      对属于这一类的的标签起作用，只要将标签的class属性设置为class1及属于这个类
+		    
+			4. 根据ID选择元素
+		      #id{
+		           font-size: 40px;
+		           color: green;
+                }
+				ID属性是一个标签的唯一标示不能与其它标签共用(但共用不报错)，唯一标示一个标签
+		    5. 根据属性选择元素(如：href)
+		  [href="https://github.com/"]{
+		           font-size: 40px;
+		           color: yellow;
+                }
+		        href不指定值时对所有带href的标签起作用，指定值时仅对指定标签起作用
+		  [href]{
+		           font-size: 40px;
+		           color: yellow;
+                }
+			6.选择器动作(冒号(:))
+			  a:hover{
+		          font-size: 40px;
+		          color: gray;
+                }
+			  当鼠标经过时，该标签css属性变为冒号选择器指定的值，有变化效果
+		-->
+<head>
+    <meta charset="UTF-8">
+	<title>CSS选择器</title>
+	<style type="text/css">
+		
+		.class1 {
+		          font-size: 40px;
+		          color: blue;
+                }
+		      p {
+		          font-size: 40px;
+		          color: red;
+                }
+			#id1{
+		          font-size: 40px;
+		          color: green;
+                }
+		 p:hover{
+		          font-size: 80px;
+		          color: gray;
+                }			
+	</style>
+</head>
+<body>
+    <!--   类选择元素 class
+       	class是一个全局属性，即所有标签都有这个属性
+	-->
+    <a href="https://github.com/" class="class1">朱才富</a><br>
+	
+	<p id="id1">朱才富</p><br>
+	
+	<h1>朱才富</h1><br>
+</body>
+</html>

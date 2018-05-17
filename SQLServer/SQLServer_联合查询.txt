@@ -1,0 +1,37 @@
+
+
+    -->联合查询：将多个查询的结果集合并成一个结果集
+	    联合要求：
+	           1. 结果集列数要一致
+			   2. 对应列类型相同
+	
+	     关键字(union, union all, except, intersect)：
+	         union：并集，合并数据，消除重复行，数据按升序排序
+		     union：并集，合并数据，不消除重复行，不排序
+		     except：差集
+		     intersect：交集
+		单列：
+		例1(union)：（合并两个结果集）
+		  select StudentID from StudentInfo
+          union
+          select StudentID from ScoreInfo
+
+		例2(union all)：（合并两个结果集）
+		  select StudentID from StudentInfo
+          intersect
+          select StudentID from ScoreInfo
+
+        例3(except)：（差集，第一个结果集减去第二个结果集，类似集合运算）
+		  select StudentID from StudentInfo
+          except
+          select StudentID from ScoreInfo
+		
+		例4(intersect)：（交集，类似集合运算）
+		 select StudentID from StudentInfo
+         except
+         select StudentID from ScoreInfo
+		 
+		多列：
+		     select StudentID,Name from StudentInfo
+             intersect
+             elect ClassID,Name from ClassInfo

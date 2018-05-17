@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>表单2</title>
+</head>
+<body>
+   
+   <input type="button" value="按钮1"> <!--或 type=button 可不加双引号-->
+   <button>按钮2</button>
+   <input type="submit" value="提交">
+   <!--
+        分析：
+		    1. 从原理讲，<button>比<input type=button>实际应用还是有区别的，<button>要比<input>功能大些，
+	           <button>可以当做任何按钮使用，适用范围大些。
+			2.<input>中button和submit的区别：submit用于提交表单，适用范围比button小些。
+			3.<input>中submit用于提交表单时，必须声明form中的method属性,最好也添加action属性。
+			4.<input type=button>通常用于和JavaScript一起使用作为绑定事件处理
+			适用范围 button >  input button > input submit
+   -->
+   <br><br><!--数字滑动-->   
+   <input type="range" min="-100" max="100" value="0"> <!--value为初始值，默认为(max+min)/2-->
+   <input type="range" min="-100" max="100" step="10"><!--step为每次增加的大小,默认为1-->
+   
+   <br><br><!--手动输入数字-->
+   <input type="number" min="-100" max="100" value="0">   
+   
+   <br><br>
+   <input type="checkbox">选中后可取消选择   
+   
+   <br><br>
+   <input type="radio">选中后无法取消   
+   
+   <br><br><!--但需要三选一时，将三个radio的name属性值设为相同-->
+   <input type="radio" name="a">ZCF
+   <input type="radio" name="a">zcf
+   <input type="radio" name="a">Zcf
+   
+   <!--------------------选项列表和数据列表----------------------------->
+   <br><br>你喜欢吃什么水果
+   <input data="text" list="fruit"><!--选项列表  <input text>必须与<datalist>结合才能显示列表  -->
+   <datalist id="fruit">     <!--通过  <input list="相应datalist的id">-->
+            <option>苹果</option>
+			<option>香蕉</option>
+			<option>菠萝</option>
+   </datalist>
+   
+   <br><br>你喜欢吃什么水果
+   <select>
+            <option>苹果</option>
+			<option>香蕉</option>
+			<option>菠萝</option>
+   </select>
+   <!--
+        <datalist>和<select>的区别：
+		<datalist>里option指定的值只做参考，也可填入其他值
+		<select>只能选择option指定的值
+   -->
+</body>
+</html>

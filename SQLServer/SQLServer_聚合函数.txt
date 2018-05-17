@@ -1,0 +1,13 @@
+
+      -->聚合函数：对行数据合并(sum, avg, count, min, max)
+	        1. 一般是对数字类型数据操作
+			2. 一般查询中可以同时写多个聚合函数，但不能与普通列混写
+			3. 聚合中null问题，不参与计算
+			
+		 例: 求科目编号为2的科目平均分：
+			 select avg(Score) from ScoreInfo where SubjectID=2
+			 
+			 求算法分析的平均分
+			 select avg(Score) from ScoreInfo as score inner join SubjectInfo as sub 
+			 on score.SubjectID=Sub.SubjectID where sub.SubjectName='算法分析'
+	         

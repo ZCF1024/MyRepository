@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+      <!--       创建CSS表单的三种方式：
+	             1. 使用元素内嵌样式表(只对单个元素起作用)
+				 2. 使用文档内嵌样式表
+				 3. 使用外部样式表
+       -->
+<head>
+    <meta charset="UTF-8">
+	<title>CSS初步</title>
+	<!-- 两属性间必须有分号，且不能有注释，如有注释，将显示不了效果 -->
+	
+	<!-- 文档内嵌样式表(类似去全局变量) -->
+	<style type="text/css">
+	    a{
+		    font-size: 50px;
+			color:blueviolet;
+ 	     }
+	</style>
+	<!-- <link rel="stylesheet" type="text/css" href="FirstCss.css">   引入外部样式表   -->
+</head>
+<body>
+    <a>朱才富</a>
+	<br><br>
+	
+    <a style="font-size: 30px; color: green">朱才富</a> <!--元素内嵌样式表(类似局部变量)-->
+    <br><br>
+</body>
+</html>
+<!--
+    1. <link ref="stylesheet" type="text/css" href="">
+	  引入外部样式表，href为外部样式表.css文件地址
+	
+	2.样式层叠方式优先考虑元素内嵌样式表，然后是文档内嵌样式表，最后才是外部样式表
+	即：优先级 ： 元素内嵌样式表 > 文档内嵌样式表 > 外部样式表
+-->

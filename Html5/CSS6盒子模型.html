@@ -1,0 +1,48 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>盒子模型</title>
+    <style type="text/css">
+    .class1{
+        border: 3px solid yellowgreen;
+        background-color: turquoise;
+        
+        background-clip: content-box;
+        /* 背景作用区域，context-box为文本框 border-box边框 */
+        
+        padding:50px 100px 150px 200px;
+
+        /*  内边距设置一 
+        padding-top:100px;
+        padding-left:100px;
+        padding-right: 100px;
+        padding-bottom:100px;
+                  
+            内边距设置二 
+        padding:100px;    上下左右距离都设置为100px
+        
+            内边距设置三
+        padding:100px 150px;    上下距离设置为100px, 左右距离设为150px
+
+            内边距设置四
+         padding:50px 100px 150px 200px;上，右，下，左(顺时针)边距
+        */
+
+
+
+        margin-top:50px;
+        margin-left:50px;
+        /* 设置外边距 */
+    }
+    </style>
+</head>
+<body>
+    <div class="class1">盒子模型</div>      
+    
+    盒子模型常见的属性名：内容(content)、内边距(边框到内容)(padding)、边框(border)、外边界(边框到边界)(margin)
+    <br>
+    CSS盒子模型就是在网页设计中经常用到的CSS技术所使用的一种思维模型
+    <img src="盒子模型.png">
+</body>
+</html>

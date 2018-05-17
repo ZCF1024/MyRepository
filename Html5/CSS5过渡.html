@@ -1,0 +1,45 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CSS过渡</title>
+    <style type="text/css">
+    p {
+        width:100px;
+        height:100px;
+        background-color:aquamarine;
+    }
+    p:hover{
+        width:500px;
+        height:500px;
+        background-color:brown;
+        
+        /* 变化延迟 */
+        /* transition-delay:1000ms; */
+
+        /* b变化时间，即变化速度 duration(持续时间)*/
+        transition-duration: 5000ms;
+        /* 
+            为了能在不同的浏览器都能看到这样的效果
+            需要加相应前缀
+            -webkit-transition-duration: ;
+            -o-transition-duration: ;欧朋浏览器
+        */
+         transition-property:width;
+        /*
+            指定标签哪部分跟随hover设置变化，不跟随的则是瞬间变化 
+        */
+         
+        transition-timing-function: ease-out;
+        /* 
+            ease: 变化先快后慢
+            ease-in: 变化速度越来越快
+            ease-out: 变化先快后慢
+            ease-in-out: 变化中间快
+        */
+    }
+    </style>
+<body>
+    <p></p>
+</body>
+</html>

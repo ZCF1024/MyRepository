@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>创建表单3</title>
+</head>
+<body>
+    <form>
+	    <input type="email" placeholder="email"><!--获取用户输入的邮箱 -->
+		<br><br>
+		
+		<input type="tel" placeholder="telephone"><!--获取用户输入的电话 -->
+		<br><br>
+		
+		<input type="url" placeholder="url"><!--获取用户输入的链接地址 -->
+		<br><br>
+		
+		<!--   email tel url提交到服务器后会检查提交内容格式是否符合要求-->
+		
+		
+		
+		<input type="date"><!--获取用户输入的日期 -->
+		<br><br>
+		
+		<input type="color"><!--获取用户输入的颜色 -->
+		<br><br>
+		
+		<input type="search" placeholder="search"><!--获取用户输入的搜索内容 -->
+		<br><br>
+		
+		<input type="hidden" value="123"><!--内容是隐藏的，但还是会提交到服务器-->
+		<br><br><!--跟前面讲到的psswd类似-->
+		
+		单个文件<input type="file" Required><!--  Required(默认)必须上传单个文件  -->
+		多个文件<input type="file" multiple><!--  mutiple上传多个文件  -->
+		<br><br>
+		<!--
+		     但使用input元素上传文件提交表单时，要设置如下内容：
+			 <form enctype="multiple/form-data"><form>
+		  -->
+		  
+		 <input type="image" src="E:\图片素材\download.jpg" width="200" alt="下载">
+		 <input type="image" src="" width="200" alt="下载"><br><br>
+		 <input type="image" src="E:\图片素材\download.jpg" width="200" height="50"><br><br>
+		 <a href="https://www.bilibili.com/" target="_blank">
+		     <image src="E:\图片素材\download.jpg">
+		 </a>
+		 <!--
+		      width/heigh: 只设置width或height时图片是按比例变化
+			  alt: 当文件加载失败时，显示alt对应的值 
+		      img放在form内，点击后可以获取点击的坐标值，并显示在浏览器链接框后几位
+		 -->
+	</form>
+</body>
+</html>

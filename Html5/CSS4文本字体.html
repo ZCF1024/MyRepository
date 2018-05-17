@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>文本字体</title>
+    <style type="text/css">
+         .class1{
+             /* 设置字体，只能设置计算机中安装了的字体 */
+            font-family: 汉仪雪峰体简;
+            font-size: 40px;
+            font-style: italic;
+            /*
+                  italic: 斜体
+                  oblique: 斜体(倾斜效果比italic浅)
+             */
+         }
+         .class2{
+             /* 小型大写字母，将小写字母转换成大写字母，且字体大小相对较小 */
+            font-variant: small-caps;
+           
+            /* 字体粗细，值越大加粗效果越明显 */
+            font-weight: 900;
+         }
+
+         .class3{
+            text-shadow: 50px 50px 1px red;
+            /*      字体阴影
+                    第一个值为水平偏移
+                    第二个值为垂直偏移
+                    第三个值为模糊程度，越大越模糊
+                    第四个值为阴影颜色 
+            */
+         }
+    </style>
+</head>
+<body>
+    <p class="class1">朱才富</p>
+    <br><br>
+    
+    <p class="class3">朱才富</p>
+    <br><br>
+
+    <p style="font-family: 汉仪雪峰体简; font-size: 40px; font-style: oblique">朱才富</p>
+    <br><br>
+
+    <p class="class1">ZCF</p>
+    <br><br>
+    <p class="class2">zcf</p>
+    <br><br>
+    <p style="text-transform:uppercase;">zcf</p>
+    <br><br>
+</body>
+</html>

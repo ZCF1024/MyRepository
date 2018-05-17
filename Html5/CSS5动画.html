@@ -1,0 +1,58 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CSS动画</title>
+    <style type="text/css">
+    p{
+        width:100px;
+        height:100px;
+        background-color: greenyellow;
+    }
+    p:hover{
+        animation-duration: 1000ms;
+        animation-name: zcf;
+        
+        /* 变化次数，infinite:无限次 (2,3,4,5....)*/
+        animation-iteration-count: infinite;
+        
+        /* 变化 前后 都按hover设置变化，默认瞬间还原变化 */
+        animation-direction: alternate;
+    }
+    @keyframes zcf{
+        /* 变化细节，从from变化到to 两段变化
+           中间加50%，75%可分为四段变化（或设置其他值设置更多段变化）
+        
+        */
+        from{
+            width:100px;
+            height:100px;
+            background-color: rgb(53, 17, 211);
+        }
+        /* 50% {
+            width:130px;
+            height:130px;
+            background-color:fuchsia;
+        }
+        75%{
+            width:160px;
+            height:160px;
+            background-color:deepskyblue;
+        } */
+        to{
+            width:200px;
+            height:200px;
+            background-color: gold;
+        }
+    }
+    </style>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
+<!-- 
+    动画和过渡的区别：
+    过渡可以保留变化后的效果
+    而动画变化后会还原
+ -->

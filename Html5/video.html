@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>嵌入视频</title>
+</head>
+<body>
+    <video height="200" src="郑伊健 陈小春 谢天华 钱嘉乐 林晓峰 - 相依为命 (Live).mp4"  controls></video>
+    <!--   
+	        autoplay: 自动播放<video src=".mp4" autoplay></video>
+			controls: 显示播放控件<video src=".mp4" controls></video>
+			preload:  预先加载视频<video src=".mp4" preload></video>
+			          解释：告诉浏览器加载完video元素后是否下载视频，分别有三个属性值：
+					  None:     不加载
+					  Metadata: 只加载第一帧
+					  auto:     (默认值)请求下载整个视频，浏览器可以忽略
+			poster:   视频载入时显示图片(载入时默认显示视频第一帧，先改成指定图片)
+			          <video height="200" src=".mp4" poster=".jpg" controls></video>
+			          
+	-->
+	
+	
+	
+	<!--
+	        1. 没有任何一个格式的视频可以支持所有的浏览器
+			2. 最简单的方法，需要Ogv与Mp4两种视频格式
+			3. 现在更新的浏览器可以支持了，但以前的旧版本还是不支持，所以要添加
+	    
+		所以要分类讨论，不同的浏览器要用不同的格式
+		    4. 设置视频格式
+			                           转换视频格式可用(视频转换王)
+			5. 在<video>中间插入source元素，source(包含src type属性)元素设置视频格式
+            
+            !!!!当浏览器不支持第一种格式时，自动切换source中的下一种格式			
+	-->
+	<video height="200" src="郑伊健 陈小春 谢天华 钱嘉乐 林晓峰 - 相依为命 (Live).mp4"  controls>
+	       <source src="郑伊健 陈小春 谢天华 钱嘉乐 林晓峰 - 相依为命 (Live).mp4" type="video/mp4"></source>
+		   <source src="郑伊健 陈小春 谢天华 钱嘉乐 林晓峰 - 相依为命 (Live).Ogg" type="video/ogg"></source>
+		   <source src="郑伊健 陈小春 谢天华 钱嘉乐 林晓峰 - 相依为命 (Live).webm" type="video/webm"></source>
+	</video>
+</body>
+</html>

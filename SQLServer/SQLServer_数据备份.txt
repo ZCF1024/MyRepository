@@ -1,0 +1,26 @@
+
+     
+	 
+	-->快速备份：
+	      -->向未有表中备份：select 列名 into 备份表明 from 源表名
+		  说明：备份表可以不存在，会新建表，表的结构完全一致，但是不包含约束（主键，外键。。。）
+		        若只想包含结构不包含数据，可以加个  top 0   (或任何结果为false的表达式)
+			例1：备份表结构及所有数据
+			    select * into Test from StudentInfo
+			
+			例2：只备份部分列及符合条件的数据
+			    select StudentID,Name into Test from StudentInfo where StudentID>2
+			
+			例3：只备份表结构
+			   select StudentID,Name into Test from StudentInfo where 1=2
+			或
+			   select StudentID,Name into Test from StudentInfo top 0
+				
+				
+	      -->向已有表备份：insert into 备份表名 select 列名 from 源表名
+		  
+		  先备份出表：
+		      select StudentID,Name,Sex into Test from StudentInfo where StudentID>4
+
+		  备份数据： 主键或有唯一约束的列不能插入备份表，会报错 
+              insert into Test(Name,Sex) select Name,Sex from StudentInfo where StudentID<5

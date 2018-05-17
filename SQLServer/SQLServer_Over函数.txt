@@ -1,0 +1,7 @@
+
+
+
+       -->Over函数：将聚合函数得到的结果分布回每一个列
+	   例：求subjectID为1的科目平均分并显示科目名
+	   select score.ScoreID,sub.SubjectName, AVG(Score) over() from ScoreInfo as score inner join SubjectInfo as sub 
+       on score.SubjectID=sub.SubjectID where sub.SubjectID=1

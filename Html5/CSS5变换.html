@@ -1,0 +1,60 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>使用变换</title>
+    <style type="text/css">
+        .class1{
+            width:100px;
+            height:100px;
+            background-color: aquamarine;
+        }
+        .class1:hover{
+            
+            transform: rotate(45deg);
+            /* transform-origin: right top; */
+            transform-origin: 10px 10px;
+            /* 旋转变换，注意：deg不能省略，角度大于零为顺时针旋转
+              transform: rotate(-45deg); 
+              
+              transform-origin: 旋转原点，默认为以中心为原点旋转
+              可设置为left top, right top, left bottom, left bottom
+              还可设置为transform-origin: 10px 10px;
+              以坐标为(10,10)为原点旋转
+            */
+            
+            
+
+           
+           /* transform: scale(1.5); */
+            /* 比例放大，向四周扩大，
+               设置  width,height是向右下方扩大 
+               width:150px;
+               height:150px;
+
+               注意： rotate和scale不会同时其作用，若纪要放大又要旋转
+                  可以设置width,height实现放大效果
+            */
+            /*
+            transform: scalex(1.5);
+            transform: scaley(3);
+            */            
+        }
+        .class2{
+            width:100px;
+            height:100px;
+            background-color: aquamarine;
+        }
+        .class2:hover{
+            
+            transform: rotate(45deg);
+            transform-origin: right bottom;       
+        }
+
+    </style>
+</head>
+<body>
+    <p class="class1"></p>
+    <p class="class2"></p>
+</body>
+</html>

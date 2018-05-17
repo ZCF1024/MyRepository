@@ -1,0 +1,11 @@
+
+      -->连接查询：join ... on ... (以学生表StudentInfo 班级表ClassInfo  成绩表ScoreInfo为例)
+	  查询学生级所在班级称：
+	  select stu.Name,cla.Name from StudentInfo as stu 
+	  inner join ClassInfo as cla 
+	  on stu.ClassID=cla.ClassID
+	  关键：连接表之间的关系
+	  内连接：inner join, 两表中完全匹配的数据
+	  左连接：left outer join, 两表中完全匹配的数据，左表中特有的数据
+	  右连接：right outer join, 两表中完全匹配的数据，右表中特有的数据
+	  完全外连接：full outer join, 两表中完全匹配的数据，左右表中特有的数据

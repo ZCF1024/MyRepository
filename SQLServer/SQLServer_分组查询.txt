@@ -1,0 +1,29 @@
+
+
+      -->分组查询：group by
+	  
+	     -->单分组依据：
+	         例1：统计每个班的人数
+	             select ClassID,COUNT(*) from StudentInfo group by ClassID
+	     
+		     例2：统计男生女生 人数
+		         select sex,COUNT(*) from StudentInfo group by Sex
+	     
+		 -->多分组依据（统计结果与各依据顺序无关，只是结果顺序不同）
+		     例3：统计每个班男生女生人数
+		         select classID,sex,COUNT(*) from StudentInfo group by Sex,ClassID
+		 
+		     例4：计算每个班每门科目的平均分
+		         select stu.ClassID,score.SubjectID,avg(Score) from StudentInfo as stu inner join ScoreInfo as score 
+                 on stu.StudentID=score.StudentID group by score.SubjectID,stu.ClassID
+		 
+		 -->加条件分组：
+		     例5：统计 “学生编号大于2” 的各班级各性别的人数
+		         select ClassID,sex,COUNT(*) from StudentInfo where StudentID>2 group by ClassID,sex
+		     
+			 例6：统计“学生编号大于2” 的 “编号为3” 的班级各性别人数
+			     select sex,COUNT(*) from StudentInfo where StudentID>2 and ClassID=3 group by sex
+				 
+	-->对分组后的结果筛选加 having：
+	       例：得到班级男生人数大于2的班级：
+	           select classId,COUNT(*) from StudentInfo where Sex=1 group by ClassID having COUNT(*)>2
