@@ -1,0 +1,32 @@
+
+    
+    ****视图解析器的作用是只对Controller类中每个函数返回值那里的String类型前后加路径，而不对@RequestMapping处加路径，对@RequestMapping处无影响！
+    <-----------------------------------------------视图解析配置--------------------------------------------------->
+    <bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:viewClass="org.springframework.web.servlet.view.JstlView" 
+		p:prefix="/jsp/"
+		p:suffix=".jsp" />
+	
+	-----:prefix 为视图解析名前缀 p:suffix 为视图解析名后缀 如：视图解析名"login"，解析后为：/jsp/login.jsp -------
+	<-----------------------------------------------视图解析配置--------------------------------------------------->
+
+    -->@RequestMapping视图解析路径问题(以项目名为BookTest1的Web项目为例)
+      (login.jsp,main.jsp在WebContent/jsp路径下，index.jsp在WebContent目录下)
+    
+    1. java web项目在TomCat服务器上运行后，浏览器页面显示为项目根目录路径如(http://localhost:8080/BookTest1/)
+	
+	2. 手动打开登录界面，输入地址	http://localhost:8080/BookTest1/jsp/login.jsp
+	
+	3. <form action="<c:url value="loginCheck.html"/>" method="post">
+	进入登录界面后，输入账号，密码，账号信息就被提交到loginCheck.html页面
+	    提交->跳转到路劲：当前路径+loginCheck.html(即http://localhost:8080/BookTest1/jsp/loginCheck.html)
+	
+	4.项目根路径后的内容(jsp/loginCheck.html)匹配到含有注解@RequestMapping(value="jsp/loginCheck.html")的方法，
+	    由此函数(此例中的loginCheck()方法)处理这个页面，验证登录用户数据
+		
+	5. 验证通过，返回new ModelAndView("main")页面，
+	    通过视图解析，"main" 被解析成：根路径 + /jsp/ + main + .jsp (即：http://localhost:8080/BookTest1/jsp/main.jsp)
+		
+	6. 验证失败，返回new ModelAndView("login", "error", "用户名或密码错误");
+	    "login" 被解析成：http://localhost:8080/BookTest1/jsp/login.jsp  即回到登录界面

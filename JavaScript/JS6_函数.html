@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript函数</title>
+</head>
+<body>
+    <p id="pid"></p>
+    <script>        
+        function demo1(){
+            var a=10;
+            var b=20;
+            alert(a+b)
+        }
+        demo1()//函数可直接在此处调用
+        
+        function demo2(){
+            alert("你点击了按钮2")
+        }
+
+        //带参数和返回值的函数
+        function testReturn(a, b){
+            if(a>b)
+               return a+">"+b;
+            else if(a==b)
+               return a+"="+b;
+            else
+               return a+"<"+b;
+        }        
+        //alert(testReturn(10,10))
+        document.getElementById("pid").innerHTML=testReturn(10,40)
+
+    </script>
+    <!-- 按钮触发函数 -->
+    <input type="button" value="按钮1" onclick="demo1()">
+
+    <button onclick="demo2()">按钮2</button>
+</body>
+</html>

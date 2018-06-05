@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<!-- 定义类，创建类 -->
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" rel="stylesheet"
+    />
+    <script type="text/javascript" src="/attachments/tuploads/extjs/ext-all.js"></script>
+    <script type="text/javascript">
+
+        Ext.define(studentApp.view.StudentDeatilsGrid, {
+            extend: 'Ext.grid.GridPanel',  //单继承Ext.grid.GridPanel类
+            id: 'studentsDetailsGrid',
+            store: 'StudentsDetailsGridStore',
+            renderTo: 'studentsDetailsRenderDiv',
+            layout: 'fit', //布局方式：在此布局中，容器用单个面板填充。
+            //属性名
+            columns: [{
+                text: 'Student Name',
+                dataIndex: 'studentName'
+            }, {
+                text: 'ID',
+                dataIndex: 'studentId'
+            }, {
+                text: 'Department',
+                dataIndex: 'department'
+            }],
+            //多继承方式
+            mixins: {
+                commons: 'DepartmentApp.utils.DepartmentUtils'
+                //可写多各类，用,号隔开
+            },
+        });
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
+<!-- 
+    Ext JS是一个JavaScript框架，它具有面向对象编程的功能。
+    Ext是封装Ext JS中所有类的命名空间。
+    
+    Ext.define（）用于在Ext JS中定义类。
+    Ext.define(class name, class members/properties, callback function);
+
+    创建对象方法1：var studentObject = new student();
+    获取对象属性：studentObject.getStudentName();
+
+    创建对象方法2：
+    Ext.create('Ext.Panel', {
+       renderTo : 'helloWorldPanel',
+       height : 100,
+       width : 100,
+       title : 'Hello world',
+       html : 	'First Ext JS Hello World Program'		
+    });
+ -->

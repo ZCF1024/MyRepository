@@ -1,0 +1,9 @@
+
+    -->容器
+        容器的主要功能是管理其内部的组件，因而在继承Ext.Component的全部功能的基础上，添加了
+	对应的用来处理内部组件的方法add、insert、remove和removeAll。在配置项方法，则添加了items
+	配置项用来添加内部组件，添加了layout配置项用来定义布局。 
+    Ext.container.Container是Ext JS中所有容器的基类。
+	
+	
+	面板：  https://www.cnblogs.com/yixiaoheng/p/study-ext-js-4.html

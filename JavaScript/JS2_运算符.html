@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS运算符</title>
+</head>
+<body>
+    <!-- 运算符基本与C运算符相同(包括三目运算符)
+         
+        1. 不同点：===、!==
+        2.  == 运算符比较时不要求等号来两边类型相同 
+            "10"==10   (true)
+            字符串的值为纯数字时，能与数字进行比较
+        
+        3. === 运算符返回true仅当等号两边值相同且类型相同 
+    -->
+    <script>
+        var i = "10";
+        var j = 10;
+        var f;
+        
+        f = i!=j; //false
+        document.write("10 != 10 " + f + "<br><br>");
+
+        f = i!= j; //false
+        document.write("\"10\" != 10 " + f +"<br><br>");
+        
+        f = i!==j; //true
+        document.write("\"10\" !== 10 " + f + "<br><br>");
+
+        f = 10==10; //true
+        document.write("10==10 " + f + "<br><br>");
+
+         f = "10"==10; //true
+        document.write("\"10\"==10 " + f + "<br><br>");
+
+         f = "10"===10; //false
+        document.write("\"10\"===10 " + f + "<br><br>");
+
+    </script>
+</body>
+</html>

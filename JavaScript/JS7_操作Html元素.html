@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DOM操作html元素</title>
+    <script>
+            function changeInnerHtml(){
+                //通过ID获取元素
+                var tmp=document.getElementById("pid");
+                if(tmp.innerHTML=="Hello")
+                    tmp.innerHTML="World";
+                else
+                    tmp.innerHTML="Hello";
+                
+                // document.write("I rewrite the page");
+                // document.write()会重写整个网页（覆盖原内容），使用时需小心
+            }
+    
+            //Js可修改html元素任何标签，如<a>的href   <img>的src
+            function changeHref(){
+                var tmp=document.getElementById("aid");
+                if(tmp.innerHTML=="百度")
+                {
+                    tmp.href="http://www.58pic.com/";
+                    tmp.innerHTML="千图网";
+                }
+                else
+                {
+                    tmp.href="https://www.baidu.com";
+                    tmp.innerHTML="百度";
+                }
+            }
+    
+            function changeSrc(){
+                tmp=document.getElementById("imgid");
+                tmp.height="200";
+                tmp.width="300";
+                tmp.src="E:/图片素材/timg.jpg";//注意路径分隔符
+            }
+        </script>
+</head>
+<body>
+    <p id="pid">Hello</p>
+    <button onclick="changeInnerHtml()">p按钮</button><br><br><br>
+    
+    <a id="aid" href="https://www.baidu.com/">百度</a><br>
+    <button onclick="changeHref()">a按钮</button><br><br>
+
+    <img id="imgid" src="E:\图片素材\QQ图片20180502160200.jpg"><br><br>
+    <button onclick="changeSrc()">图片按钮</button>
+
+</body>
+</html>

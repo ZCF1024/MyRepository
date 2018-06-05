@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Js操作CSS</title>
+    <link rel="stylesheet" type="text/css" href="css8.css" />
+    <script>
+        var num=0;
+        function changeCss(){
+            // tmp=document.getElementsByClassName("div");无效，不知为何
+            tmp=document.getElementById("div");
+            if(num==0)
+            {
+                tmp.style.background="blue";
+            }
+            else if(num==1)
+                tmp.style.height=200;
+            else if(num==2)
+                tmp.style.width=200;
+            else if(num==3)
+                tmp.style.color="red";
+            else
+            {
+                tmp.background="aqua";
+                tmp.style.height=100;
+                tmp.style.width=100;
+                tmp.style.color="blank";
+                num=0;
+            }
+            num++;
+        }
+    </script>
+</head>
+<body>
+    <div id="div" class="div">
+        Hello
+    </div>
+    <button onclick="changeCss()">Css按钮</button>
+</body>
+</html>

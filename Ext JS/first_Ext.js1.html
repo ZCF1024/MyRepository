@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" rel="stylesheet" />
+      <script type="text/javascript" src="/attachments/tuploads/extjs/ext-all.js"></script>
+      <script type="text/javascript">
+         
+         Ext.onReady(function() {
+         Ext.create('Ext.Panel', {
+            renderTo: 'helloWorldPanel', //是此面板必须作用的元素的ID
+            height: 200,    //面板尺寸
+            width: 600,
+            title: 'Hello world',  // 面板标题。
+            html: 'First Ext JS Hello World Program'  //面板中显示的html内容
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <div id="helloWorldPanel" />
+   </body>
+</html>
+<!-- 
+Ext.onReady（）方法将在Ext JS准备好渲染Ext JS元素时调用。
+
+Ext.create（）方法用于在Ext JS中创建对象，这里我们创建一个简单的面板类Ext.Panel的对象。
+ -->
